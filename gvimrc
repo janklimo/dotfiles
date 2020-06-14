@@ -1,12 +1,8 @@
 " MacVim Settings
-colorscheme macvim
-if strftime("%H") < 16
-  set bg=light
-else
-  set bg=dark
-endif
+colorscheme atom
+
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
-set guifont=Menlo\ Regular:h16
+set guifont=Menlo\ Regular:h12

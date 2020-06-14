@@ -5,3 +5,6 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # Path to Poetry for Python dependency management
 export PATH="$HOME/.poetry/bin:$PATH"
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash

@@ -252,3 +252,6 @@ endfunction
 
 " let autoreadargs={'autoread':1}
 " execute WatchForChanges("*",autoreadargs)
+
+let g:vimrubocop_keymap = 0
+nmap <Leader>r :RuboCop<CR>

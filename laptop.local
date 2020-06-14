@@ -27,6 +27,7 @@ cask "dropbox"
 cask "1password"
 cask "karabiner-elements"
 cask "divvy"
+cask "visual-studio-code"
 EOF
 
 fancy_echo "Cleaning up old Homebrew formulae ..."

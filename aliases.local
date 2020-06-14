@@ -1,4 +1,6 @@
 alias e='mvim'
+alias c='code .'
+alias ci='code-insiders .'
 alias ...='../..'
 alias gui='github'
 alias rc='spring rails c'

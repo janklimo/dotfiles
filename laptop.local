@@ -33,8 +33,8 @@ fancy_echo "Cleaning up old Homebrew formulae ..."
 brew cleanup
 
 git_clone_or_pull "https://github.com/thoughtbot/dotfiles.git" "~/.thoughtbot-dotfiles"
-git_clone_or_pull "https://github.com/hiattp/dotfiles.git" "~/.hiattp-dotfiles"
-cp ~/.hiattp-dotfiles/rcrc ~/.rcrc || :
+git_clone_or_pull "https://github.com/janklimo/dotfiles.git" "~/.janklimo-dotfiles"
+cp ~/.janklimo-dotfiles/rcrc ~/.rcrc || :
 
 curl -sSL 'https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py' | python
 

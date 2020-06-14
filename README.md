@@ -21,8 +21,8 @@ included in the thoughtbot script by default):
 12. Divvy
 
 ```
-git clone https://github.com/hiattp/dotfiles.git ~/.hiattp-dotfiles
-cp ~/.hiattp-dotfiles/laptop.local ~/.laptop.local
+git clone https://github.com/janklimo/dotfiles.git ~/.janklimo-dotfiles
+cp ~/.janklimo-dotfiles/laptop.local ~/.laptop.local
 curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/master/mac
 sh mac 2>&1 | tee ~/laptop.log
 ```
@@ -49,12 +49,12 @@ were installed:
 
 ## Dotfile Installation on Existing Systems
 
-The following adds the `~/.hiattp-dotfiles` and  `~/.thoughtbot-dotfiles` directories, then uses rcm to symlink the dotfiles into the home directory. Note that some things won't work unless you are running Zsh instead of Bash, and you must have [rcm](https://github.com/thoughtbot/rcm) installed.
+The following adds the `~/.janklimo-dotfiles` and  `~/.thoughtbot-dotfiles` directories, then uses rcm to symlink the dotfiles into the home directory. Note that some things won't work unless you are running Zsh instead of Bash, and you must have [rcm](https://github.com/thoughtbot/rcm) installed.
 
 ```
 git clone https://github.com/thoughtbot/dotfiles.git ~/.thoughtbot-dotfiles
-git clone https://github.com/hiattp/dotfiles.git ~/.hiattp-dotfiles
-env RCRC=$HOME/.hiattp-dotfiles/rcrc rcup
+git clone https://github.com/janklimo/dotfiles.git ~/.janklimo-dotfiles
+env RCRC=$HOME/.janklimo-dotfiles/rcrc rcup
 ```
 
 ## Other Notes:

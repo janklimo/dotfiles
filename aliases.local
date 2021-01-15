@@ -40,7 +40,7 @@ alias gmm='g merge master'
 alias gmf='g -c merge.ff= merge'
 alias gam='g aa; g ci -m'
 alias m='migrate'
-alias gulp='node_modules/.bin/gulp'
+alias be='bundle exec'
 alias rtd='bundle exec rake db:drop db:create db:migrate RAILS_ENV=test'
 alias rdm='bundle exec rake db:migrate'
 alias rdr='bundle exec rake db:rollback'
@@ -53,7 +53,7 @@ alias n='vim ~/Desktop/notes.txt'
 alias bunbin='bundle install --binstubs .bundle/bin'
 alias fix='$EDITOR `git diff --name-only | uniq`'
 alias remove_stale_postgres_pid_file='rm /usr/local/var/postgres/postmaster.pid'
-alias ra='rubocop -a'
+alias ra='rubocop -A'
 alias ja='yarn lint-write; yarn tsc'
 alias sa='yarn run stylelint --syntax scss app/assets/stylesheets/**/*.scss --fix'
 alias l='ra; ja; sa'
@@ -62,6 +62,7 @@ alias uc='git reset HEAD~1'
 alias cleandesk="defaults write com.apple.finder CreateDesktop false; killall Finder"
 alias messydesk="defaults write com.apple.finder CreateDesktop true; killall Finder"
 alias gmt='g -c merge.ff= merge template/master'
+alias gh='github'
 
 # Include private aliases
 [[ -f ~/.aliases.private ]] && source ~/.aliases.private

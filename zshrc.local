@@ -6,5 +6,8 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 # Path to Poetry for Python dependency management
 export PATH="$HOME/.poetry/bin:$PATH"
 
+# Avoid Too many open files errors in Ruby 2.7
+ulimit -n 24576
+
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash

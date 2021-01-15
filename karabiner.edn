@@ -1,0 +1,61 @@
+; Based on https://raw.githubusercontent.com/johnlindquist/dotfiles/master/karabiner/karabiner.edn
+; Tutorial: https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md
+
+{;
+ :alone 500
+ :delay 200
+ :held 500
+ :sim 200
+ :simlayer-threshold 222
+
+ :applications {:chrome ["com.google.Chrome"]
+                :code ["com.microsoft.VSCode"]}
+
+ :simlayers {:emoji-mode {:key :z}
+             :f-mode {:key :f}}
+
+ :templates {;
+             :paste "osascript -e 'set the clipboard to \"%s\"
+                                   tell application \"System Events\"
+                                     keystroke \"v\" using command down
+                                   end tell'"
+             :focus "osascript -e 'tell application \"%s\" to activate'"
+             ; 
+             }
+
+ :main [;
+        {:des "caps_lock"
+         :rules [[:##escape :left_control nil {:alone :escape}]]}
+
+        {:des "emoji"
+         :rules [:emoji-mode
+                 [:b [:paste "😊"]] ;blush
+                 [:c [:paste "👏"]] ;clap
+                 [:d [:paste "🧐"]] ;dignified
+                 [:f [:paste "🤦‍♂️"]] ;facepalm️
+                 [:g [:paste "😬"]] ;grimace
+                 [:h [:paste "😍"]] ;heart-eyes
+                 [:i [:paste "👀"]] ;I
+                 [:j [:paste "😂"]] ;joking
+                 [:l [:paste "❤️"]] ;love
+                 [:m [:paste "🤯"]] ;mind blown 
+                 [:p [:paste "🎉"]] ;party
+                 [:q [:paste "🤫"]] ;quiet
+                 [:r [:paste "🚀"]] ;rocket
+                 [:s [:paste "😢"]] ;sad
+                 [:t [:paste "🤔"]] ;thinking
+                 [:u [:paste "🤷‍♂️"]] ;shrUg
+                 [:v [:paste "😎"]] ;very cool
+                 [:w [:paste "😉"]] ;wink:
+                 [:x [:paste "😵"]] ;x-eyes
+                 [:y [:paste "😅"]] ;sweatY
+                 [:left_command [:paste "👍"]]
+                 [:left_option [:paste "👎"]]]}
+            ; 
+        {:des "focus on apps" :rules [:f-mode
+                                      [:e [:focus "MacVim"]]
+                                      [:h [:focus "Github Desktop"]]
+                                      [:i [:focus "iTerm2"]]
+                                      [:o [:focus "Code"]]]}]
+     ;
+ }

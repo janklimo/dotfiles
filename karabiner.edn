@@ -12,6 +12,7 @@
                 :code ["com.microsoft.VSCode"]}
 
  :simlayers {:emoji-mode {:key :z}
+             :d-mode {:key :d}
              :f-mode {:key :f}}
 
  :templates {;
@@ -52,10 +53,20 @@
                  [:left_command [:paste "👍"]]
                  [:left_option [:paste "👎"]]]}
             ; 
-        {:des "focus on apps" :rules [:f-mode
+        {:des "d-key (mouse)"
+         :rules [:d-mode
+                 [:i :!Ckeypad_plus] ; Zoom in
+                 [:o :!Ckeypad_hyphen] ; Zoom out
+                 [:a [:!Ctab]] ; Activate previous app
+                 [:j {:mkey {:vwheel 60}}] ; Scroll down
+                 [:k {:mkey {:vwheel -60}}]] ; Scroll up
+         }
+
+        {:des "f-key (focus)" :rules [:f-mode
                                       [:e [:focus "MacVim"]]
                                       [:h [:focus "Github Desktop"]]
                                       [:i [:focus "iTerm2"]]
+                                      [:m [:focus "Chrome"]]
                                       [:o [:focus "Code"]]]}]
      ;
  }

@@ -6,6 +6,15 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 # Path to Poetry for Python dependency management
 export PATH="$HOME/.poetry/bin:$PATH"
 
+# Use Python 3.10 for Hyperliquidity MM
+export PATH="/usr/local/opt/python@3.10/libexec/bin:$PATH"
+
+# Postgres
+export PATH="/usr/local/opt/postgresql@13/bin:$PATH"
+
+# Ruby 3.2 YJIT
+export RUBY_YJIT_ENABLE=1
+
 # Avoid Too many open files errors in Ruby 2.7
 ulimit -n 24576
 

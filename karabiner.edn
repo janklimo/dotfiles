@@ -1,4 +1,5 @@
 ; Based on https://raw.githubusercontent.com/johnlindquist/dotfiles/master/karabiner/karabiner.edn
+; and https://github.com/nikitavoloboev/dotfiles/blob/master/karabiner/karabiner.edn
 ; Tutorial: https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md
 
 {;
@@ -6,16 +7,28 @@
  :delay 200
  :held 500
  :sim 200
- :simlayer-threshold 222
+ :simlayer-threshold 400
 
  :applications {:chrome ["com.google.Chrome"]
                 :code ["com.microsoft.VSCode"]}
 
  :simlayers {:emoji-mode {:key :z}
              :d-mode {:key :d}
-             :f-mode {:key :f}}
+             :f-mode {:key :f}
+             :open-mode {:key :semicolon}
+             ;
+             }
+
+ :modifiers {;
+             :cs [:command :shift]
+             :ct [:command :control]
+             ;
+             }
 
  :templates {;
+             :code-project "osascript -e 'tell application \"Visual Studio Code\" to activate' &&
+                            open -a 'Visual Studio Code' %s -g %s
+                            "
              :paste "osascript -e 'set the clipboard to \"%s\"
                                    tell application \"System Events\"
                                      keystroke \"v\" using command down
@@ -24,15 +37,27 @@
              ; 
              }
 
+ :tos {;
+       :emoji_picker {:key :spacebar :modi :ct} ;!CTspacebar
+       :command_palette {:key :p :modi :cs} ; VS Code command palette
+       }
+
  :main [;
         {:des "caps_lock"
          :rules [[:##escape :left_control nil {:alone :escape}]]}
+
+        {:des "code"
+         :rules [:code
+                 [:left_command :left_command nil {:alone :command_palette}]
+                 ;
+                 ]}
 
         {:des "emoji"
          :rules [:emoji-mode
                  [:b [:paste "😊"]] ;blush
                  [:c [:paste "👏"]] ;clap
                  [:d [:paste "🧐"]] ;dignified
+                 [:e :emoji_picker]
                  [:f [:paste "🤦‍♂️"]] ;facepalm️
                  [:g [:paste "😬"]] ;grimace
                  [:h [:paste "😍"]] ;heart-eyes
@@ -40,6 +65,7 @@
                  [:j [:paste "😂"]] ;joking
                  [:l [:paste "❤️"]] ;love
                  [:m [:paste "🤯"]] ;mind blown 
+                 [:n :emoji_picker]
                  [:p [:paste "🎉"]] ;party
                  [:q [:paste "🤫"]] ;quiet
                  [:r [:paste "🚀"]] ;rocket
@@ -62,11 +88,19 @@
                  [:k {:mkey {:vwheel -60}}]] ; Scroll up
          }
 
-        {:des "f-key (focus)" :rules [:f-mode
-                                      [:e [:focus "MacVim"]]
-                                      [:h [:focus "Github Desktop"]]
-                                      [:i [:focus "iTerm2"]]
-                                      [:m [:focus "Chrome"]]
-                                      [:o [:focus "Code"]]]}]
+        {:des "open files"
+         :rules [:open-mode
+                 [:k [:code-project "~/.janklimo-dotfiles/karabiner.edn"]]
+                 ;
+                 ]}
+
+        {:des "f-key (focus)"
+         :rules [:f-mode
+                 [:e [:focus "MacVim"]] ; editor
+                 [:h [:focus "Github Desktop"]]
+                 [:i [:focus "iTerm2"]]
+                 [:s [:focus "Visual Studio Code"]] ; studio
+                 [:w [:focus "Chrome"]] ; web
+                 ]}]
      ;
  }

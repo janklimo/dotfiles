@@ -47,7 +47,7 @@ set complete-=d
 
 " Paste from clipboard
 map <leader>p :set paste<cr>:r !pbpaste<cr>:set nopaste<cr>
-map <leader>bb :Gblame<CR>
+map <leader>bb :Git blame<CR>
 " Faster saving
 noremap <Leader>w :up<CR>
 " Faster quit
@@ -253,3 +253,6 @@ endfunction
 let g:vimrubocop_keymap = 0
 nmap <Leader>r :RuboCop<CR>
 let g:asyncrun_open = 6
+
+" fix SnipMate parser deprecation message
+let g:snipMate = { 'snippet_version' : 1 }

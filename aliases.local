@@ -52,7 +52,7 @@ alias n='vim ~/Desktop/notes.txt'
 # Run once in every rails project directory to shim bundle exec
 alias bunbin='bundle install --binstubs .bundle/bin'
 alias fix='$EDITOR `git diff --name-only | uniq`'
-alias remove_stale_postgres_pid_file='rm /usr/local/var/postgresql@13/postmaster.pid'
+alias remove_stale_postgres_pid_file='rm /opt/homebrew/var/postgresql@14/postmaster.pid'
 alias ra='rubocop -A'
 alias ja='yarn lint-write; yarn tsc'
 alias sa='yarn run stylelint --syntax scss app/assets/stylesheets/**/*.scss --fix'
@@ -67,6 +67,7 @@ alias vmxrc='kubectl exec -it --namespace verumex `kubectl get pods --namespace 
 alias vmxlogs='kubectl logs deployment/verumex --namespace verumex --all-containers=true -f'
 alias yd='yarn dev'
 alias fs='foreman start -f Procfile.dev'
+alias awsume=". awsume"
 
 # Include private aliases
 [[ -f ~/.aliases.private ]] && source ~/.aliases.private

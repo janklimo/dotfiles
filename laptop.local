@@ -17,17 +17,20 @@ brew unlink vim
 
 brew bundle --file=- <<EOF
 brew "macvim"
-brew "overmind"
 brew "python"
 brew "vips"
+brew "github-keygen"
+brew "yqrashawn/goku/goku"
 cask "iterm2"
 cask "google-chrome"
 cask "github"
 cask "dropbox"
 cask "1password"
 cask "karabiner-elements"
-cask "divvy"
 cask "visual-studio-code"
+cask "raycast"
+cask "spotify"
+cask "telegram"
 EOF
 
 fancy_echo "Cleaning up old Homebrew formulae ..."
@@ -37,15 +40,11 @@ git_clone_or_pull "https://github.com/thoughtbot/dotfiles.git" "~/.thoughtbot-do
 git_clone_or_pull "https://github.com/janklimo/dotfiles.git" "~/.janklimo-dotfiles"
 cp ~/.janklimo-dotfiles/rcrc ~/.rcrc || :
 
-curl -sSL 'https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py' | python
-
-curl \
-  -fsS \
-  -o ~/.config/karabiner/assets/complex_modifications/escape_multifunction.json \
-  'https://gist.githubusercontent.com/hiattp/e4b2c8b04a6db4f531264ca759e0d2ab/raw/00d0bc6c75fd09074f37a6d06c7cc609bca03fd7/escape_multifunction.json'
-
 # Enable key-repeating for Vim VSCode extension
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
+fancy_echo "Setting up karabiner modifiers..."
+goku
 
 pip3 install black
 

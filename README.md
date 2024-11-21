@@ -3,23 +3,6 @@ personal preference.
 
 ## New System Setup
 
-Use the [thoughtbot laptop script](https://github.com/thoughtbot/laptop) to set
-up a new machine. The `laptop.local` script here will install the following (not
-included in the thoughtbot script by default):
-
-1. MacVim
-2. [Overmind](https://github.com/DarthSim/overmind)
-3. Python (with Pip)
-4. vips (image processing)
-5. iTerm2
-6. Google Chrome
-7. Karabiner Elements
-8. Dropbox
-9. 1Password
-10. Karabiner Elements
-11. GitHub
-12. Divvy
-
 ```
 git clone https://github.com/janklimo/dotfiles.git ~/.janklimo-dotfiles
 cp ~/.janklimo-dotfiles/laptop.local ~/.laptop.local
@@ -30,11 +13,7 @@ sh mac 2>&1 | tee ~/laptop.log
 NOTE: You'll want to adjust a few settings/parameters in the applications that
 were installed:
 
-1. In Karabiner Elements, go to "Complex modifications" and "Add rule" to find
-   the Escape Multifunction behavior and enable it. Then choose "Parameters" and
-   change `to_if_alone_timeout_milliseconds` to 500.
-2. In Karabiner Elements, map Caps Lock to Escape as a "Simple modification".
-3. In iTerm2 check Profiles > Default > Reuse previous sessions directory.
+1. In iTerm2 check Profiles > Default > Reuse previous sessions directory.
 4. In iTerm2 change Profiles > Default > Terminal > Scroll back links to 10,000.
 5. In OSX change the cursor speed and key repeat speed to highest, and
    delay until key repeat to lowest in the Mouse and Keyboard settings

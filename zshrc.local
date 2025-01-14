@@ -19,7 +19,7 @@ export RUBY_YJIT_ENABLE=1
 export ASDF_RUBY_BUILD_VERSION=master
 
 # Goku - Karabiner
-export GOKU_EDN_CONFIG_FILE="~/.janklimo-dotfiles/karabiner.edn"
+export GOKU_EDN_CONFIG_FILE="/Users/janklimo/.janklimo-dotfiles/karabiner.edn"
 
 # Avoid Too many open files errors in Ruby 2.7
 ulimit -n 24576

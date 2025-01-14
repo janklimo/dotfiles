@@ -1,5 +1,5 @@
 alias e='mvim'
-alias c='code .'
+alias c='cursor .'
 alias ci='code-insiders .'
 alias ...='../..'
 alias gui='github'
